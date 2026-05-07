@@ -269,7 +269,8 @@ hr { border-color: var(--border) !important; }
 
 
 # ─── DATABASE ──────────────────────────────────────────────────────────────────
-DB_PATH = "/home/claude/ultracoach.db"
+import os
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ultracoach.db")
 
 def get_conn():
     return sqlite3.connect(DB_PATH, check_same_thread=False)
